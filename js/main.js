@@ -18,4 +18,15 @@ var createElement = function (element, elementClass, text) {
   };
 };
 
+const elCards = $_('.cards')
+const elCardsItems = $$_('.card')
 
+elCards.addEventListener('click', evt => {
+  console.log(evt.target.matches('.card'))
+  if(evt.target.matches('.card')) {
+    elCardsItems.forEach(item=> {
+      item.classList.remove('active')
+    });
+    evt.target.classList.toggle('active')
+  }
+})
